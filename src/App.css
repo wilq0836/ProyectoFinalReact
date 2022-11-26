@@ -46,22 +46,29 @@ header{
     #navegador{
       margin-top: 10px; 
       margin-left: 30px;
-      text-align: justify;   
-      padding: 15px  90px 10 10 ;
-      font-size: 40px;
-      font-style: oblique;  
-      
+      text-align: justify;  
+      padding: 45px  90px 10 10 ;
+      font-size: 30px;
+      font-style: oblique; 
+  
     }
-
-
     nav >a{
-      color: rgb(25, 18, 18);
+      color: rgb(16, 11, 11);
       text-align: justify;      
       margin-right: 10px;      
     
-    }      
+    }   
+  
+            
+    #dropdown-item a:hover{
+      text-decoration: underline;
+      
+    }
+
     
     nav > a:hover{
       text-decoration: underline;
-    
+      
     }
+
+  
