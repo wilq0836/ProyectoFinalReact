@@ -1,0 +1,155 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+.App {
+  background-color: white;
+  
+  color: rgb(15, 15, 15);
+  text-shadow: 4px 4px 4px #b4a698;
+ 
+ 
+
+  /*background-image:  url("./Componentes//img/carrusel1.jpg");*/
+  background-size:cover;
+  background-attachment: fixed;
+  
+  
+  
+}
+
+
+
+.titulo{
+  color: rgba(17, 17, 16, 0.795);    
+  margin-left: 30;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 100px;
+  text-shadow: 4px 4px 4px #94581f;
+  color: #3b3939;
+}
+
+
+.titulo:hover{
+  color: hsl(0, 2%, 36%);
+}
+
+.dropdown{
+  margin-left: 40px;
+}
+
+lu:hover{
+  color: #e0b69a;
+}
+.dropdown-item{
+  font-size: 33;
+}
+lu{
+  font-size: 33;
+}
+.container10{
+  display: flex;
+  width: 1200;
+  margin-top: auto;
+  margin-left: 100 ;
+  background-color: hsl(0, 2%, 36%);;
+  text-shadow: 4px 4px 4px #181616;
+  color: #080808;
+
+}
+
+
+
+.container2{
+  
+  display: flex;
+  background-color: #d5d6ce;
+  flex-wrap: wrap;
+  width: 1670;
+  margin-left: 200;
+
+}
+
+
+
+ .container3{
+ 
+   background-color: rgba(231, 137, 82, 0.692);
+   width: 380px;
+   height: 720px;
+   margin-left: 30px;
+   margin-top: 30;
+   margin-bottom: 30;
+   
+ }
+
+ .container4{
+  background-color: #080808;
+  width: 700;
+  margin-top: 100;
+  margin-bottom: 100;
+  margin-left: 600;
+ }
+
+
+
+ #cardItemid{
+  align-items:center;
+  font-style: italic;
+  font-size: larger;
+  
+
+ }
+ .container-fluid{
+ 
+  width: auto;
+
+ }
+
+ #containerContador{
+ 
+ display: flex;
+ width: 130px;
+ margin-top: 80px;
+ margin-left: 30px;
+  
+ }
+
+ .cantidad{
+  width: 30px;
+  text-align: center;
+  font-size: larger;
+  font-style:initial;
+  
+ }
+
+#botonAgregar{
+  margin-top: 25px;
+}
+
+#verCarrito{
+  margin-top: 40px;
+  width: 160;
+ }
+ #cardImg{
+  width: 600;
+ }
+
+ .card{
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+ }
+
+ .card-body{
+
+  margin-left: 30;
+  margin-right: 30;
+  margin-top: 40;
+  margin-bottom: 40;
+ }
