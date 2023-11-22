@@ -4,11 +4,11 @@ import { useState } from "react";
 
 export const CarContext = createContext();
 
-const carritoInicial = JSON.parse(localStorage.getItem("carrito"))|| [];
+//const carritoInicial = JSON.parse(localStorage.getItem("carrito"))|| [];
 
 export const CartProvaider = ({children})=>{
 
-  const [carrito, setCarrito]= useState([carritoInicial]);
+  const [carrito, setCarrito]= useState([]);
 
   
 
@@ -20,14 +20,14 @@ export const CartProvaider = ({children})=>{
    
     const revisarSiCarrito =  carrito.find((producto)=> producto.id === ItemAgregado.id);
     if(revisarSiCarrito){
-      console.log("item encontrado"); 
+      //console.log("item encontrado"); 
       revisarSiCarrito.numero += numero;   
       console.log(carrito);  
 
     }else{
      
       carrito.push(ItemAgregado);
-      console.log("Producto NO esta")   
+      //console.log("Producto NO esta")   
       console.log(carrito);    
   }
 
