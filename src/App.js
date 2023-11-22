@@ -14,16 +14,19 @@ import { CheckOut } from './Componentes/FireBase/CheckOut';
 import CarWidget from './Componentes/CarCompras/CarWidget';
 import { BuscarPedidoFire } from './Componentes/ImpresionFinal/BuscarPedidoFire';
 import { Pedidos } from './Componentes/ImpresionFinal/BuscarPedido';
+import Footer from './Componentes/ComponentesApp/Footer';
 
 
 function App() {
   return (
 
+
     
+    
+    
+    <div className="App">
     <CartProvaider>
     <BrowserRouter>
-    <div className="App">
-      
       <h1 className='titulo'>BIKESTWOGO</h1>
       <Navbar></Navbar>
       
@@ -40,13 +43,20 @@ function App() {
         <Route path='/Carrito' element={<CarWidget></CarWidget>}></Route>  
         <Route path='/BuscarPedido/' element={<BuscarPedidoFire/>}></Route> 
         <Route path='/BuscarPedido/:id' element={<Pedidos/>}></Route> 
-     
       </Routes>
-
       <Mapas/>
-    </div>
-    </BrowserRouter>
-    </CartProvaider>
+      <Footer></Footer> 
+      </BrowserRouter>
+      </CartProvaider>
+      </div>
+      
+     
+ 
+          
+    
+        
+       
+    
   );
 }
 
