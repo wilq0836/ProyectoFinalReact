@@ -37,15 +37,13 @@ const handleValores=(e)=>{
 }
 
 
-
-
     
   return (
     <div
-      className="container"
-      style={{ marginBottom: 100, backgroundColor: "white" }}
+      className="container5"
+      style={{ backgroundColor: "white" }}
     >
-      <h2 style={{ textAlign: "center" }}>Datos Formulario</h2>
+      <h2  style={{ fontSize:55, textAlign: "center",}}>Datos Formulario</h2>
 
       <form className="row g-3 m-3 p-3" onSubmit={handSumit}>
         
