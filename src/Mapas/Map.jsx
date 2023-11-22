@@ -18,7 +18,7 @@ export const Map =({ zoomLevel })=>{
 
   return (
     <div 
-      style={{ maxWidth: 400, height: 300, marginLeft:20}}
+      style={{ Width: 450, height: 400, marginLeft:5, marginRight:5}}
       ref={containerRef}
     />
   );
