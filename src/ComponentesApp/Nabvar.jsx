@@ -14,12 +14,12 @@ function Navbar (){
                 </div>
 
              <div className="dropdown">
-                <lu>  <Link className = "dropdown-item" to='/VerItem/Categorias/todos'>Productos Biblioteca</Link> </lu>
+                <lu>  <Link className = "dropdown-item" to='/VerItem/Categorias/todos'>Todos los Productos</Link> </lu>
                 </div>
  
                  <div className="dropdown">
                    <lu type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Productos</lu>
+                     Marcas</lu>
                      <ul className="dropdown-menu dropdown-menu-dark">
                       <Link  className = "dropdown-item"  to='/VerItem/Categorias/scott' >Scott</Link>  
                        <li><Link  className = "dropdown-item"  to='/VerItem/Categorias/Trek'>Trek</Link></li>
@@ -33,17 +33,17 @@ function Navbar (){
 
                   <div className="dropdown">
                    <lu className="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Accesorios FireBase</lu>
+                     FireBase</lu>
                      <ul className="dropdown-menu dropdown-menu-dark">
-                      <Link  className = "dropdown-item"  to='/VerItemFire/Categorias/scott' >Scott</Link>  
-                       <li><Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Trek'>Trek</Link></li>
-                        <li><Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Colnago'>Colnago</Link></li>
-                         <li> <Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Giant'>Giant</Link></li>
+                      <Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Bebidas' >Bebidas</Link>  
+                       <li><Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Geles'>Geles</Link></li>
+                        <li><Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Barras'>Barras</Link></li>
+                         <li> <Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Kits'>Kits</Link></li>
                        </ul>
                         </div>
 
                    <div className="dropdown">
-                      <lu> <Link className = "dropdown-item" to='/contenedorFetch/'>Productos Fetch</Link></lu>
+                      <lu> <Link className = "dropdown-item" to='/contenedorFetch/'>Fetch</Link></lu>
                          </div>
 
                
