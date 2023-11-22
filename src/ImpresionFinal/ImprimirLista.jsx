@@ -10,11 +10,11 @@ export const ImprimirLista =(pedido)=>{
       console.log(...pedido2)
 
     return(
-    <div className="card-body">
+    <div className="card-body" style={{marginLeft:40 , marginBottom:50}} >
 
         {pedido1.map((i)=><div><h3>Nombre: {i.nombre}</h3>
         <h3>correo electronico: {i.email}</h3>
-        <h3>Direccion: {i.address}</h3>
+        <h3>Direccion de Envio: {i.address}</h3>
         <h3>Ciudad: {i.ciudad}</h3>
         <h3> Total Pedido: {i.total}  </h3>
         </div>
@@ -47,14 +47,10 @@ export const ImprimirLista =(pedido)=>{
                 }
               </tbody>
               
-            </table>
-            
+            </table>       
     
             </table>
-            
-                 
-                  
- 
+            <h3 style={{ marginLeft:30}}>Su compra sera enviada dentro de las proximas 24 horas</h3>
 
             </div>
     )

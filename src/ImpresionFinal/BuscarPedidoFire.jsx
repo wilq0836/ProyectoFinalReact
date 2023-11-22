@@ -15,12 +15,14 @@ export const BuscarPedidoFire = ()=>{
 
     return(
            
+     
+      <div className="container12">
 
-        <form className="card">
+      <form style={{marginLeft:20,marginRight:20, marginTop:20,marginBottom:20}} >
         <div className="mb-2">
           <label  className="form-label">Ingrese su Nombre</label>
           <input onChange={handle} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-          <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+          
         </div>
         <div className="mb-3">
           <label  className="form-label">Ingrese su codigo de pedido</label>
@@ -32,6 +34,7 @@ export const BuscarPedidoFire = ()=>{
         </div>
         <Link to={`/BuscarPedido/${id}`}  type="submit" className="btn btn-primary">Submit</Link>
       </form>
+      </div>
     
     )
 }
