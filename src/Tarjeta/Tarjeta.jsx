@@ -28,10 +28,11 @@ export const Targeta = ({valorSeleccionadoLista, propiedad})=>{
                 <h5>Marca: {item.marca} </h5>
                 <h5>Modelo: {item.modelo }</h5>
                 <h5>Precio: {item.precio}</h5>
-                <h5>Especificación: {item.cantidad}</h5>  
+                <h5>Especificación: {item.especificacion}</h5> 
+                <h5>Cantidad: {item.cantidad}</h5>  
             </div>   
             <hr></hr>
-              <button className="btn btn-primary" onClick={()=>AgregarCarrito(item, 1)} >Agregar Carrito</button>  
+              <button className="btn btn-secondary" onClick={()=>AgregarCarrito(item, 1)} >Agregar Carrito</button>  
               <hr></hr>
                <Link className="btn btn-primary" to={'/Carrito'} >Ver Carrito</Link>  
                <hr></hr>
