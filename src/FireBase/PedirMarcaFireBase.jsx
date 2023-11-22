@@ -29,7 +29,7 @@ export const VerItemMarcaFireBase =()=>{
     return(
           
            <Targeta valorSeleccionadoLista={productos} propiedad={"firebase"}></Targeta>
-    
+           
     )
     
     

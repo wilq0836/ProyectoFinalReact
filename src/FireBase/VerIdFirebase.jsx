@@ -26,11 +26,10 @@ export const VerItemIdFireBase = ()=>{
     },[idfirebase])
 
     return(
-    <div className="container3">
-        
+          
         <ItemDetails itemEntregado={item}></ItemDetails>
+        
      
-     </div>
     )
     
     }
