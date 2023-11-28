@@ -46,6 +46,9 @@ export const FiltrarArticulos = (valor)=>{
 
 
 
+
+
+
 const todos = [
     {id:0,marca:"Pinarello",modelo:"f12",precio:21000000,especificacion:"nueva",foto: require("../img/F12A567-Grey-Black.jpg"),foto2: require("../img/F12-Banner-Web-1.jpeg"),foto3: require("../img/F12.imagen.jpg"),foto4: require("../img/f12Captura-de-pantalla-2019-05-07-a-las-8.37.06.png"),cantidad:1},
     {id:1,marca:"Pinarello",modelo:"f10",precio:22000000,especificacion:"nueva",foto:require("../img/F10PINARELLO-F10-204-Diamond.png"),foto2:require("../img/pinarello10.jpg"),foto3:require("../img/F10PINARELLO-F10-200-BoBy.png"),foto4:require("../img/F10PINARELLO-F10-201-Fluorite.png"),cantidad:1},
@@ -67,5 +70,3 @@ const todos = [
     {id:17,marca:"scott",modelo:"addictRc2",precio:10000000,especificacion:"Nueva",foto:require("../img/addictrc30.jpg"),foto2:require("../img/addict4.JPG"),foto3:require("../img/addict1.JPG"),foto4:require("../img/addict2.JPG"),foto5:require("../img/addict3.JPG"),cantidad:1},
 
 ]
-
-
