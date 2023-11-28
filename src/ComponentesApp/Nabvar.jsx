@@ -10,16 +10,16 @@ function Navbar (){
             <nav className="navbar" >
             
             <div className="dropdown">
-               <lu><Link  className = "dropdown-item"  to='/'>Inicio</Link></lu>
+            <Link  className = "dropdown-item"  to='/'>Inicio</Link>
                 </div>
 
              <div className="dropdown">
-                <lu>  <Link className = "dropdown-item" to='/VerItem/Categorias/todos'>Todos los Productos</Link> </lu>
+                 <Link className = "dropdown-item" to='/VerItem/Categorias/todos'>Todos los Productos</Link> 
                 </div>
  
                  <div className="dropdown">
-                   <lu type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     Marcas</lu>
+                    <Link className = "dropdown-item" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     Marcas</Link>
                      <ul className="dropdown-menu dropdown-menu-dark">
                       <Link  className = "dropdown-item"  to='/VerItem/Categorias/scott' >Scott</Link>  
                        <li><Link  className = "dropdown-item"  to='/VerItem/Categorias/Trek'>Trek</Link></li>
@@ -28,12 +28,11 @@ function Navbar (){
                           </ul>
                     </div>
 
-                  
-
+                
 
                   <div className="dropdown">
-                   <lu className="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                     FireBase</lu>
+                   <Link className="dropdown-item" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                     FireBase</Link>
                      <ul className="dropdown-menu dropdown-menu-dark">
                       <Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Bebidas' >Bebidas</Link>  
                        <li><Link  className = "dropdown-item"  to='/VerItemFire/Categorias/Geles'>Geles</Link></li>
@@ -43,23 +42,23 @@ function Navbar (){
                         </div>
 
                    <div className="dropdown">
-                      <lu> <Link className = "dropdown-item" to='/contenedorFetch/'>Fetch</Link></lu>
+                      <Link className = "dropdown-item" to='/contenedorFetch/'>Fetch</Link>
                          </div>
 
                
                   <div className="dropdown">
-                    <lu><Link className = "dropdown-item" to='/Formulario/'>Contacto</Link></lu>           
+                    <Link className = "dropdown-item" to='/Formulario/'>Contacto</Link>           
                       </div>
 
                       <div className="dropdown">
-                         <lu><Link className = "dropdown-item" to='/CheckOut/'>Sign in</Link></lu>           
+                         <Link className = "dropdown-item" to='/CheckOut/'>Sign in</Link>         
                           </div>
 
                        <div className="dropdown">
-                        <lu><Link className = "botonCarrito1" type="button"  to='/Carrito'> <i className="bi bi-bag-check-fill">Carrito de compras</i></Link></lu>
+                        <Link className = "dropdown-item" type="button"  to='/Carrito'> Carrito de compras</Link>
                          </div>
                          <div className="dropdown">
-                        <lu><Link className = ""  to='/BuscarPedido/' > Buscar Pedido</Link></lu>
+                           <Link className = "dropdown-item"  to='/BuscarPedido/' > Buscar Pedido</Link>
                          </div>
 
              </nav> 
