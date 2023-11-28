@@ -36,12 +36,29 @@
   margin-right: 15px;
 }
 
-lu:hover{
-  color: #e69662;
-}
+
 .dropdown-item{
   font-size: 35;
-  font-family:Georgia, 'Times New Roman', Times, serif
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: white;
+  font-style:italic;
+  text-decoration: none;
+}
+
+.dropdown-item:hover{
+  color: #e69662;
+}
+
+span{
+  font-size: 35;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: white;
+  font-style:italic;
+  text-decoration: none;
+}
+
+span:hover{
+  color: #e69662;
 }
 
 lu{
@@ -49,6 +66,15 @@ lu{
   font-style:italic;
   font-family:Georgia, 'Times New Roman', Times, serif;
 }
+
+Link{
+  font-size: 35;
+  color: white;
+  font-style:italic;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  text-decoration: none;
+}
+
 
 .container10{
   display: flex;
