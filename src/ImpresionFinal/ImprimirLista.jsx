@@ -3,8 +3,10 @@
 export const ImprimirLista =(pedido)=>{
 
 
-      const pedido1 = [pedido.pedido1];
+      const pedido1 = [{...pedido.pedido1}];
       const pedido2 = [...pedido.pedido1.productos];
+
+ 
       
       console.log(pedido.pedido1);
       console.log(...pedido2)
@@ -12,7 +14,7 @@ export const ImprimirLista =(pedido)=>{
     return(
     <div className="card-body" style={{marginLeft:40 , marginBottom:50}} >
 
-        {pedido1.map((i)=><div><h3>Nombre: {i.nombre}</h3>
+        {pedido1.map((i)=><div><h3>Nombre:{i.nombre}</h3>
         <h3>correo electronico: {i.email}</h3>
         <h3>Direccion de Envio: {i.address}</h3>
         <h3>Ciudad: {i.ciudad}</h3>
@@ -29,6 +31,7 @@ export const ImprimirLista =(pedido)=>{
                   <th scope="col">Modelo</th>
                   <th scope="col">Precio</th>
                   <th scope="col">Unidades</th>
+                  <th scope="col">Imagen</th>
                   <th scope="col">Total</th>
                 </tr>
               </thead>
@@ -39,7 +42,9 @@ export const ImprimirLista =(pedido)=>{
                   <td>{i.modelo}</td>
                   <td>{i.precio}</td>
                   <td>{i.numero}</td>
+                  <td> < img className="imagentab" src={i.foto} alt="" /></td>
                   <td>{i.numero*i.precio}</td>
+                
                 </tr>
                 
                 )
