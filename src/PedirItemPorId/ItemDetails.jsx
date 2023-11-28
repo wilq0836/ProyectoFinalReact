@@ -13,14 +13,21 @@ export const ItemDetails =({itemEntregado})=>{
  
     const [cantidad, setCantidad ] = useState(0);
     const { AgregarCarrito} = useContext(CarContext);
+    
 
-    const [imag , setImag] = useState(  require("../img/F12.imagen.jpg"));
+    const [imag , setImag] = useState(nuevoArreglo.foto);
+
+   
 
     const handleImg = (e)=>{
       setImag(e)
       
     }
 
+    const handleImgen =(e)=>{
+      setImag(e)
+
+    }
 
     
 
@@ -35,6 +42,9 @@ export const ItemDetails =({itemEntregado})=>{
                   <div className="imagetab"  onClick={()=>handleImg(i.foto2)}> <img className="imagentab" src={(i.foto2)} alt=""/></div>
                   <div className="imagetab"  onClick={()=>handleImg(i.foto3)}> <img className="imagentab" src={(i.foto3)} alt=""/></div>
                   <div className="imagetab"  onClick={()=>handleImg(i.foto4)}> <img className="imagentab" src={(i.foto4)} alt=""/></div>
+                  <div className="imagetab"  onClick={()=>handleImg(i.foto5)}> <img className="imagentab" src={(i.foto5)} alt=""/></div>
+                  <div className="imagetab"  onClick={()=>handleImg(i.foto6)}> <img className="imagentab" src={(i.foto5)} alt=""/></div>
+
             </div>
             )}
             
@@ -48,34 +58,22 @@ export const ItemDetails =({itemEntregado})=>{
               <div id="carouselExampleFade" className="carousel slide" style={{marginLeft:40}} >
               
               <div className="carousel-inner">
-                   <div className="carousel-item active">
-                      <img  className = "card-img"  id="carousel-item"  key = {i.id}  src={(i.foto)} alt={i.modelo} /></div>
 
-                         <div  className="carousel-item active">
-                            <img className = "card-img"  id="carousel-item" src={(i.foto2)} alt="..."/>    </div>
-    
-                               <div  className="carousel-item active">
-                               <img className = "card-img" id="carousel-item" src={(i.foto3)} alt="..."/>    </div>
-
-                                    <div class="carousel-item active">
-                                    <img className = "card-img"  id="carousel-item" src={(i.foto4)} alt="..."/>    </div>
-
+              <div className="carousel-item active">
+                      <img  className = "card-img"  id="carousel-item"  key = {i.id}  src={(imag)} alt={i.modelo} /></div>
+                   
+                   
                       </div>
 
-                      <button  style={{ backgroundColor:"rgba(212, 73, 30, 0.363)"}} class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                      <button onClick={()=>handleImgen( i.foto)} style={{ backgroundColor:"rgba(212, 73, 30, 0.363)"}} className="carousel-control-prev">
                        <span  className="carousel-control-prev-icon" aria-hidden="true"></span>
                        
                       </button>
 
-                      <button style={{ backgroundColor:"rgba(212, 73, 30, 0.363)"}} class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                      <button onClick={()=>handleImgen( i.foto2)}  style={{ backgroundColor:"rgba(212, 73, 30, 0.363)"}} class="carousel-control-next">
                        <span  className="carousel-control-next-icon" aria-hidden="true"></span>
                        
-                      </button>
-                      
-                      
-
-    
-                      
+                      </button>             
                       
                      
   
@@ -106,3 +104,17 @@ export const ItemDetails =({itemEntregado})=>{
     )
 
 }
+
+
+/*<div className="carousel-item active">
+                      <img  className = "card-img"  id="carousel-item"  key = {i.id}  src={(i.foto)} alt={i.modelo} /></div>
+
+                         <div  className="carousel-item active">
+                            <img className = "card-img"  id="carousel-item" src={(i.foto2)} alt="..."/>    </div>
+    
+                               <div  className="carousel-item active">
+                               <img className = "card-img" id="carousel-item" src={(i.foto3)} alt="..."/>    </div>
+
+                                    <div class="carousel-item active">
+                                    <img className = "card-img"  id="carousel-item" src={(i.foto4)} alt="..."/>    </div>
+*/
