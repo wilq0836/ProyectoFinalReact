@@ -5,15 +5,15 @@ import { collection } from "firebase/firestore"
 import { db } from "./Config"
 import { addDoc } from "firebase/firestore"
 import { ImprimirLista } from "../ImpresionFinal/ImprimirLista"
-import { useEffect } from "react"
-import { pedirCompra } from "../ImpresionFinal/BuscarPedido"
+//import { useEffect } from "react"
+//import { pedirCompra } from "../ImpresionFinal/BuscarPedido"
 
 
 export const CheckOut =()=>{
 
     const[pedidoId, setPedidoId] = useState("");
     const[pedidoFinal, setPedidoFinal] = useState("");
-    const[pedidoFinal2, setPedidoFinal2] = useState("");
+   // const[pedidoFinal2, setPedidoFinal2] = useState("");
 
 
     const {carrito, precioTotal, vaciarCarrito} = useContext(CarContext)
@@ -81,7 +81,7 @@ export const CheckOut =()=>{
         
       }
 
-      useEffect(()=>{
+     /* useEffect(()=>{
 
         pedirCompra(pedidoId)
         .then((res)=>
@@ -89,13 +89,13 @@ export const CheckOut =()=>{
         setPedidoFinal2(...res))
 
 
-      },[pedidoId])
+      },[pedidoId])*/
 
    
     
         if(pedidoId){
 
-       console.log(pedidoId);
+      
         
         return(
             <div className="container13" style={{ color:"black", backgroundColor:"white", marginLeft: 300, marginRight:300}} >
@@ -106,7 +106,7 @@ export const CheckOut =()=>{
                 <h3 style={{marginLeft:40,marginTop:30}}>Resumen de su pedido</h3>                
                 
                 <ImprimirLista pedido1={pedidoFinal}></ImprimirLista>
-                <ImprimirLista pedido1={pedidoFinal2}></ImprimirLista>
+                
               
                 
                 
