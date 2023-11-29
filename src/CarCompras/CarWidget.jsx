@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CarContext } from "../Context/CarContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ContadorProductos } from "../ComponentesContador/ComponenteContador";
 
 
 
@@ -9,11 +10,10 @@ import { Link } from "react-router-dom";
  const CarWidget =() =>{
 
   
-  const[numeroElemt] = useState(1);
    
   const { AgregarCarrito, carrito, precioTotal, cantidadCarrito, eliminarArticulo, vaciarCarrito} = useContext(CarContext);
 
-
+  const [cantidad, setCantidad ] = useState(0);
 
   const handleEliminar = (item)=>{
     
@@ -43,8 +43,8 @@ import { Link } from "react-router-dom";
     <tr>
        <th scope="col">Marca</th>
         <th scope="col">Modelo</th>
-         <th scope="col">Cantidad</th>
-           <th scope="col">Adicionar articulos</th>
+         <th scope="col">Cantidad Articulos</th>
+           <th scope="col" >< div style={{marginLeft:110}}>Adicionar articulos</div ></th>
               <th scope="col">Precio Unitario</th>
                   <th scope="col">Precio Total</th>
                      <th scope="col">Eliminar</th>
@@ -56,12 +56,8 @@ import { Link } from "react-router-dom";
                           <td>{item.marca}</td>
                             <td>{item.modelo}</td>
                             <td>{item.numero}</td>
-                               <td><input  id = {`cantidad-producto-${item.id}`} key = {`cantidad-producto-${item.id}`}   type="number"  min="1" max="10"  onClick={(e)=>{
                                
-                               AgregarCarrito(item,numeroElemt)
-                              
-                                 
-                               }} /></td>
+                               <td id = {`cantidad-producto-${item.id}`}><div><ContadorProductos arreglo={item}  AgregarCarrito = {AgregarCarrito}  stock={10}  cantidad ={(c)=>{console.log("Cantidad Agregada" + c); setCantidad(c); }} ></ContadorProductos></div></td>
                                  <td >{item.precio}</td>
                                     <td>{item.precio * item.numero}</td> 
                                        <td><button  id = {`eliminar-${item.modelo}`} key={`eliminar-${item.modelo}`} 
