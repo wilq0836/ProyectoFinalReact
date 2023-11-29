@@ -2,10 +2,11 @@ import {  useState } from "react";
 
 
 
-export const ContadorProdutos = ({stock,cantidad,arreglo,AgregarCarrito})=>{
+export const ContadorProductos = ({stock,cantidad,arreglo,AgregarCarrito})=>{
     
 
     const [numero, setNumero] = useState(1);
+    
 
     const aumentar = ()=>{
 
@@ -24,16 +25,15 @@ export const ContadorProdutos = ({stock,cantidad,arreglo,AgregarCarrito})=>{
  
     
     return(
-        <div className="container-fluid" >
+        <div className="container" >
             <div id="containerContador">
             <button className="btn btn-primary" onClick={()=>disminuir()} disabled={!numero} >-</button>
             <div className="cantidad">{numero}</div>
             <button className="btn btn-primary" onClick={()=>aumentar()} disabled={numero>=stock} >+</button>
             </div>
             <button id = "botonAgregar" className="btn btn-primary" onClick={()=>{ 
-              AgregarCarrito(...arreglo,numero);  
-              cantidad(numero);
-              
+              AgregarCarrito(arreglo,numero);  
+              cantidad(numero);            
              
               
              } } disabled={numero>stock || !numero}>Agregar al Carrito</button>
