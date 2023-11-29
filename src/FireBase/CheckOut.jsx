@@ -5,15 +5,14 @@ import { collection } from "firebase/firestore"
 import { db } from "./Config"
 import { addDoc } from "firebase/firestore"
 import { ImprimirLista } from "../ImpresionFinal/ImprimirLista"
-//import { useEffect } from "react"
-//import { pedirCompra } from "../ImpresionFinal/BuscarPedido"
+
 
 
 export const CheckOut =()=>{
 
     const[pedidoId, setPedidoId] = useState("");
     const[pedidoFinal, setPedidoFinal] = useState("");
-   // const[pedidoFinal2, setPedidoFinal2] = useState("");
+  
 
 
     const {carrito, precioTotal, vaciarCarrito} = useContext(CarContext)
@@ -81,16 +80,6 @@ export const CheckOut =()=>{
         
       }
 
-     /* useEffect(()=>{
-
-        pedirCompra(pedidoId)
-        .then((res)=>
-        
-        setPedidoFinal2(...res))
-
-
-      },[pedidoId])*/
-
    
     
         if(pedidoId){
@@ -105,10 +94,7 @@ export const CheckOut =()=>{
                 
                 <h3 style={{marginLeft:40,marginTop:30}}>Resumen de su pedido</h3>                
                 
-                <ImprimirLista pedido1={pedidoFinal}></ImprimirLista>
-                
-              
-                
+                <ImprimirLista pedido1={pedidoFinal}></ImprimirLista>   
                 
             </div>
         )
@@ -127,7 +113,7 @@ export const CheckOut =()=>{
       <form className="row g-3 m-3 p-3" onSubmit={handSumit}>
         
         <div className="">
-            <label htmlFor="inputNombre" className="form-label">
+            <label  className="form-label">
               Nombre
             </label>
             <input
@@ -143,7 +129,7 @@ export const CheckOut =()=>{
   
   
           <div className="col-md-6">
-            <label htmlFor="inputEmail4" className="form-label">
+            <label  className="form-label">
               Email
             </label>
             <input 
@@ -157,19 +143,10 @@ export const CheckOut =()=>{
   
           </div>
   
-          <div className="col-md-6">
-            <label htmlFor="inputPassword4" className="form-label">
-              Password
-            </label>
-            <input type="password" className="form-control" id="inputPassword4"
-             value={valores.password}
-             onChange={handleValores}
-             name="password"
-            />
-          </div>
+          
   
           <div className="col-12">
-            <label htmlFor="inputAddress" className="form-label">
+            <label className="form-label">
               Address
             </label>
             <input
@@ -185,7 +162,7 @@ export const CheckOut =()=>{
   
   
           <div className="col-md-6">
-            <label htmlFor="inputCity" className="form-label">
+            <label  className="form-label">
               City
             </label>
             <input type="text" className="form-control" id="inputCity" 
@@ -196,7 +173,7 @@ export const CheckOut =()=>{
           </div>
   
           <div className="col-md-4">
-            <label htmlFor="inputState" className="form-label">
+            <label  className="form-label">
               State
             </label>
             <select id="inputState" className="form-select">
@@ -205,8 +182,8 @@ export const CheckOut =()=>{
             </select>
           </div>
   
-          <div class="col-md-2">
-            <label htmlFor="inputZip" className="form-label">
+          <div className="col-md-2">
+            <label className="form-label">
               Zip
             </label>
             <input type="text" className="form-control" id="inputZip" />
@@ -236,3 +213,16 @@ export const CheckOut =()=>{
         
     )
 }
+
+
+
+/*<div className="col-md-6">
+            <label htmlFor="inputPassword4" className="form-label">
+              Password
+            </label>
+            <input type="password" className="form-control" id="inputPassword4"
+             value={valores.password}
+             onChange={handleValores}
+             name="password"
+            />
+          </div>*/
