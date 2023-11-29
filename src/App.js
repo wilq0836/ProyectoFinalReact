@@ -23,7 +23,7 @@ function App() {
     
     <div className="App">
     <CartProvaider>
-    <BrowserRouter>
+     <BrowserRouter>
      <h1 className='titulo'>BIKESTWOGO</h1>
       <Navbar></Navbar>
       
@@ -41,10 +41,15 @@ function App() {
         <Route path='/BuscarPedido/' element={<BuscarPedidoFire/>}></Route> 
         <Route path='/BuscarPedido/firebase/:id' element={<Pedidos></Pedidos>}></Route> 
       </Routes>
+      
       <Mapas/>
-      <Footer></Footer> 
+      
+      <Footer></Footer>
+      
       </BrowserRouter>
-      </CartProvaider>
+       </CartProvaider>
+     
+      
       </div>
       
      

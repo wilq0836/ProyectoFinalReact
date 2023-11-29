@@ -196,6 +196,7 @@ Link{
   width: 1000;
   height: 1000;
   margin-top: 70;
+ 
   
  }
 
@@ -222,18 +223,13 @@ Link{
   font-style: italic; 
 
  }
- .container-fluid{
  
-  width: auto;
-  margin-top: 15;
-
- }
 
  #containerContador{
  
  display: flex;
- margin-top: 200px; 
- margin-left: 180;
+ margin-top: 10px; 
+ margin-left: 170;
   
  }
 
@@ -288,7 +284,7 @@ Link{
 
   background-color: white;
   color: #080808;
-  width: auto;
+  align-content: center;
   
  }
 
