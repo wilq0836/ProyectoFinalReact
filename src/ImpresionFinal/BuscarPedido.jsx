@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { pedirCompra } from "./ConsultarCompra";
+import { ImprimirLista } from "./ImprimirLista";
 
 
 
@@ -50,32 +51,95 @@ import { pedirCompra } from "./ConsultarCompra";
 const[item, setItem] = useState("");
 
 
-
     const idCompra = useParams().id;
       
     useEffect(()=>{
       pedirCompra(idCompra)
       .then((res)=>{       
        setItem(...res)
+      })
+    },[idCompra])
                         
-      
-        })
-          },[idCompra])
-          console.log(item)
-         const productoConsultado = [item];
+     //console.log(item)
+    const productoConsultado = [...item.productos];
+    console.log(productoConsultado)
        
-         
-
+        
  
     return(
                 
-      <>
-             { 
-                    productoConsultado.map((i)=>                     
+
+      <div className="container13" style={{ color:"black", backgroundColor:"white", marginLeft: 300, marginRight:300}} >
+              
+                <h2 style={{marginLeft:40,marginTop:80}}>Gracias por su compra</h2>
+                <h3 style={{marginLeft:40,marginTop:30}}>Codigo de su pedido:   {item.id}</h3>
+                <h3 style={{marginLeft:40,marginTop:30}}>Resumen de su pedido </h3> 
+                <div key={item.id} style={{marginLeft:30, marginTop:20}}>
+                <h3>Nombre: {item.nombre}</h3>
+                <h3>correo electronico: {item.email}</h3>
+                <h3>Direccion de Envio: {item.address}</h3>
+                <h3>Ciudad: {item.ciudad}</h3>
+                <h3> Total Pedido: {item.total}  </h3>
+                </div>
+
+                <div className="card-body" style={{marginLeft:40 , marginBottom:50}} >
+                <table className="table" style={{marginTop:40}}>
+                <table className="table" style={{marginTop:40}}>
+                <thead>
+                <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Marca</th>
+                              <th scope="col">Modelo</th>
+                              <th scope="col">Precio</th>
+                              <th scope="col">Unidades</th>
+                              <th scope="col">Total</th>
+                              <th>Imagen</th>
+                            </tr>
+                </thead>
+
+                <tbody>
+                { productoConsultado.map((e)=>
+                            <tr key={e.id}>
+                              <th scope="row">{e.id}</th>
+                              <td>{e.marca}</td>
+                              <td>{e.modelo}</td>
+                              <td>{e.precio}</td>
+                              <td>{e.numero}</td>
+                              <td>{e.numero*e.precio}</td>
+                              <td> < img className="imagentab" src={e.foto} alt="" /></td>
+                            </tr>
+                            )
+                            }
+               
+                </tbody>
+                </table> 
+                </table>
+
+                </div>
+
+     
+        
+       </div>
+               )
+
+
+
+              
+
+}
+
+
+
+
+
+
+
+/*  { 
+                    objeto.map((i)=>                     
                     
                     <div  style={{display:"inline-block", width:1700, color:"black", backgroundColor:"white", marginLeft: 100, marginTop:100}} >
                    
-                    <div style={{marginLeft:30, marginTop:20}}>
+                    <div key={i.id} style={{marginLeft:30, marginTop:20}}>
                       <h2>Gracias por su compra</h2>
                         <h3 >Codigo de su pedido:   {i.id}</h3>
                 
@@ -88,7 +152,7 @@ const[item, setItem] = useState("");
                                 <h3> Total Pedido: {i.total}  </h3>
                     </div>
 
-                  <div className="card-body" style={{marginLeft:40 , marginBottom:50}} >
+                  <div className="card-body" style={{marginLeft:40 , marginBottom:50}}>
 
                     <table className="table table-striped table-hover">
                         
@@ -105,11 +169,26 @@ const[item, setItem] = useState("");
                             </tr>
                           </thead>
 
+
+
+
+ <tr key={item.id}>
+                              <th scope="row">{objeto.productos.id}</th>
+                              <td>{item.productos.marca}</td>
+                              <td>{item.productos.modelo}</td>
+                              <td>{item.productos.precio}</td>
+                              <td>{item.productos.numero}</td>
+                              <td>{item.productos.numero*item.productos.precio}</td>
+                              <td> < img className="imagentab" src={item.productos.foto} alt="" /></td>
+                            </tr>
+
+
+
                           
                           <tbody>
 
                             { i.productos.map((e)=>
-                            <tr>
+                            <tr key={e.id}>
                               <th scope="row">{e.id}</th>
                               <td>{e.marca}</td>
                               <td>{e.modelo}</td>
@@ -134,83 +213,4 @@ const[item, setItem] = useState("");
                     </div>   
                     
                     ) 
-                 }
-                  
-               </>
-               )
-}
-
-
-
-
-
-
-
-/* <div className="container13">
-             
-                {
-                    o.map((i)=>
-   
-                   
-                    
-                    <div className="container13" style={{ color:"black", backgroundColor:"white", marginLeft: 300, marginRight:300}} >
-                    
-                    <h2 style={{marginLeft:40,marginTop:80}}>Gracias por su compra</h2>
-                    <h3 style={{marginLeft:40,marginTop:30}}>Codigo de su pedido:   {i.id}</h3>
-                    
-                    <h3 style={{marginLeft:40,marginTop:30}}>Resumen de su pedido</h3> 
-
-                    <h3>Nombre: {i.nombre}</h3>
-                    <h3>correo electronico: {i.email}</h3>
-                    <h3>Direccion de Envio: {i.address}</h3>
-                    <h3>Ciudad: {i.ciudad}</h3>
-                    <h3> Total Pedido: {i.total}  </h3>
-
-                    <div className="card-body" style={{marginLeft:40 , marginBottom:50}} >
-
-        
-        <table className="table table-striped table-hover">
-            
-            <table className="table" style={{marginTop:40}}>
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Marca</th>
-                  <th scope="col">Modelo</th>
-                  <th scope="col">Precio</th>
-                  <th scope="col">Unidades</th>
-                  <th scope="col">Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                {i.productos.map((i)=><tr>
-                  <th scope="row">{i.id}</th>
-                  <td>{i.marca}</td>
-                  <td>{i.modelo}</td>
-                  <td>{i.precio}</td>
-                  <td>{i.numero}</td>
-                  <td>{i.numero*i.precio}</td>
-                </tr>
-                
-                )
-               
-                }
-              </tbody>
-              
-            </table>       
-    
-            </table>
-            <h3 style={{ marginLeft:30}}>Su compra sera enviada dentro de las proximas 24 horas</h3>
-
-            </div>            
-                    
-
-
-
-                    </div>
-                    
-                    
-                 )
-            }
-              
-          </div>*/
+                 }*/

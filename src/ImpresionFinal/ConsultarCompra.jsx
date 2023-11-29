@@ -27,7 +27,8 @@ export const pedirCompra = (id) => {
               
                 
                 reject({
-                    Error:"No se encontro el item por id"
+                    Error: console.log("No se encontro el item por id")
+                    
                 });
             
            
