@@ -45,14 +45,6 @@ function Navbar (){
                       <Link className = "dropdown-item" to='/contenedorFetch/'>Fetch</Link>
                          </div>
 
-               
-                  <div className="dropdown">
-                    <Link className = "dropdown-item" to='/Formulario/'>Contacto</Link>           
-                      </div>
-
-                      <div className="dropdown">
-                         <Link className = "dropdown-item" to='/CheckOut/'>Sign in</Link>         
-                          </div>
 
                        <div className="dropdown">
                         <Link className = "dropdown-item" type="button"  to='/Carrito'> Carrito de compras</Link>
@@ -60,6 +52,12 @@ function Navbar (){
                          <div className="dropdown">
                            <Link className = "dropdown-item"  to='/BuscarPedido/' > Buscar Pedido</Link>
                          </div>
+               
+                     <div className="dropdown">
+                        <Link className = "dropdown-item" to='/Formulario/'>Contacto</Link>           
+                      </div>
+
+                      
 
              </nav> 
                 
