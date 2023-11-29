@@ -3,19 +3,20 @@ import { useState } from "react";
 import {  useContext} from "react";
 import { CarContext } from "../Context/CarContext";
 import { Link } from "react-router-dom";
-import { ContadorProdutos } from "../ComponentesContador/ComponenteContador";
+import { ContadorProductos } from "../ComponentesContador/ComponenteContador";
 
 
 export const ItemDetails =({itemEntregado})=>{
     
      
     const nuevoArreglo = [{...itemEntregado}];
+    const nuevoArreglo2 = itemEntregado;
  
     const [cantidad, setCantidad ] = useState(0);
     const { AgregarCarrito} = useContext(CarContext);
     
 
-    const [imag , setImag] = useState(nuevoArreglo.foto);
+    const [imag , setImag] = useState(require("../img/F12.imagen.jpg"));
 
    
 
@@ -32,20 +33,20 @@ export const ItemDetails =({itemEntregado})=>{
     
 
     return(
-    <div className="container4">
 
+
+    <div className="container4">
          <div className="container-tab" >
            
-               { nuevoArreglo.map((i)=>
+         { nuevoArreglo.map((i)=>
                 <div className="container-tabindex">
-                  <div className="imagetab"  onClick={()=>handleImg(i.foto)}> <img className="imagentab" src={(i.foto)} alt=""/></div>
-                  <div className="imagetab"  onClick={()=>handleImg(i.foto2)}> <img className="imagentab" src={(i.foto2)} alt=""/></div>
-                  <div className="imagetab"  onClick={()=>handleImg(i.foto3)}> <img className="imagentab" src={(i.foto3)} alt=""/></div>
-                  <div className="imagetab"  onClick={()=>handleImg(i.foto4)}> <img className="imagentab" src={(i.foto4)} alt=""/></div>
-                  <div className="imagetab"  onClick={()=>handleImg(i.foto5)}> <img className="imagentab" src={(i.foto5)} alt=""/></div>
-                  <div className="imagetab"  onClick={()=>handleImg(i.foto6)}> <img className="imagentab" src={(i.foto5)} alt=""/></div>
-
-            </div>
+                   <div className="imagetab"  onClick={()=>handleImg(i.foto)}>  <img className="imagentab" src={(i.foto)} alt=""/></div>
+                   <div className="imagetab"  onClick={()=>handleImg(i.foto2)}> <img className="imagentab" src={(i.foto2)} alt=""/></div>
+                   <div className="imagetab"  onClick={()=>handleImg(i.foto3)}> <img className="imagentab" src={(i.foto3)} alt=""/></div>
+                   <div className="imagetab"  onClick={()=>handleImg(i.foto4)}> <img className="imagentab" src={(i.foto4)} alt=""/></div>
+                   <div className="imagetab"  onClick={()=>handleImg(i.foto5)}> <img className="imagentab" src={(i.foto5)} alt=""/></div>
+                   <div className="imagetab"  onClick={()=>handleImg(i.foto6)}> <img className="imagentab" src={(i.foto5)} alt=""/></div>
+                 </div>
             )}
             
          </div>
@@ -53,45 +54,39 @@ export const ItemDetails =({itemEntregado})=>{
 
             {  nuevoArreglo.map((i)=> 
            
-           <div id="cardItemid" className="containerdetalles"  key = {i.id}>
+               <div    id="cardItemid" className="containerdetalles" >
 
-              <div id="carouselExampleFade" className="carousel slide" style={{marginLeft:40}} >
+                   <div    id="carouselExampleFade" className="carousel slide" style={{marginLeft:40}} >
               
-              <div className="carousel-inner">
+                      <div   className="carousel-inner">
+                         <div   className="carousel-item active">                
+                           <img  className = "card-img"  id="carousel-item"    src={(imag)} alt={i.modelo} />
+                           </div>                          
+                     </div>
 
-              <div className="carousel-item active">
-                      <img  className = "card-img"  id="carousel-item"  key = {i.id}  src={(imag)} alt={i.modelo} /></div>
-                   
-                   
-                      </div>
+                       <button  onClick={()=>handleImgen( i.foto)} style={{ backgroundColor:"rgba(212, 73, 30, 0.363)"}} className="carousel-control-prev">
+                        <span  className="carousel-control-prev-icon" aria-hidden="true"></span>
+                          </button>
 
-                      <button onClick={()=>handleImgen( i.foto)} style={{ backgroundColor:"rgba(212, 73, 30, 0.363)"}} className="carousel-control-prev">
-                       <span  className="carousel-control-prev-icon" aria-hidden="true"></span>
-                       
-                      </button>
+                         <button    onClick={()=>handleImgen( i.foto2)}  style={{ backgroundColor:"rgba(212, 73, 30, 0.363)"}} className="carousel-control-next">
+                            <span  className="carousel-control-next-icon" aria-hidden="true"></span>
+                             </button>             
+                  </div>
+                  <div   style={{marginLeft:40,}}>
 
-                      <button onClick={()=>handleImgen( i.foto2)}  style={{ backgroundColor:"rgba(212, 73, 30, 0.363)"}} class="carousel-control-next">
-                       <span  className="carousel-control-next-icon" aria-hidden="true"></span>
-                       
-                      </button>             
-                      
-                     
-  
-</div>
-
-<div style={{marginLeft:40,}}>
-         <div className="detalles" >
-         <h3>Id: {i.id}</h3>
-         <h3>Marca: {i.marca}</h3>
-         <h3>Modelo: {i.modelo}</h3>
-         <h3>Precio: {i.precio}</h3>
-         <h3>Cantidad: {i.cantidad}</h3>
-         <h3>Especificacion: {i.especificacion}</h3>
-         <h4>Agregar al carrito: {cantidad} productos</h4>
-         </div> 
+                  <div style={{marginLeft: 40}} >
+                     <h3>Id: {i.id}</h3>
+                     <h3>Marca: {i.marca}</h3>
+                     <h3>Modelo: {i.modelo}</h3>
+                     <h3>Precio: {i.precio}</h3>
+                     <h3>Cantidad: {i.cantidad}</h3>
+                     <h3>Especificacion: {i.especificacion}</h3>
+                     <h4>Agregar al carrito: {cantidad} productos</h4>
+                  </div> 
+            
         
-         <ContadorProdutos arreglo ={nuevoArreglo} stock={10} AgregarCarrito = {AgregarCarrito} cantidad={(c)=>{console.log("Cantidad Agregada" + c); setCantidad(c); }} />
-         <Link  id = "verCarrito"className="btn btn-primary" to={'/Carrito'} >Ver Carrito</Link>  
+         <div style={{marginTop:100}}><ContadorProductos arreglo ={nuevoArreglo2} stock={10} AgregarCarrito = {AgregarCarrito} cantidad={(c)=>{console.log("Cantidad Agregada" + c); setCantidad(c); }} /> </div>
+          <Link key={i.id} id = "verCarrito"className="btn btn-primary" to={'/Carrito'} >Ver Carrito</Link>  
     </div>
          
          </div>
@@ -117,4 +112,23 @@ export const ItemDetails =({itemEntregado})=>{
 
                                     <div class="carousel-item active">
                                     <img className = "card-img"  id="carousel-item" src={(i.foto4)} alt="..."/>    </div>
-*/
+
+
+
+                
+
+
+
+
+
+
+
+
+
+               
+
+
+
+
+
+                                    */
