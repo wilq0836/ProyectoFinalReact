@@ -12,6 +12,7 @@ export const CheckOut =()=>{
 
     const[pedidoId, setPedidoId] = useState("");
     const[pedidoFinal, setPedidoFinal] = useState("");
+ 
   
 
 
@@ -34,9 +35,7 @@ export const CheckOut =()=>{
     const handSumit = (e)=>{
         e.preventDefault();
         console.log("enviado", valores)
-
         Comprar(valores);
-      
     
     }
     
@@ -63,9 +62,7 @@ export const CheckOut =()=>{
             total: precioTotal(),
 
     
-        }
-      setPedidoFinal(pedido);
-       
+        }        
       
        
         const pedidosRef = collection(db,"pedidos");
@@ -73,18 +70,15 @@ export const CheckOut =()=>{
         addDoc(pedidosRef,pedido)
         
         .then((doc)=>{
-            setPedidoId(doc.id);
+            setPedidoId(doc.id);        
             vaciarCarrito();
         })
-        
+        setPedidoFinal(pedido);
         
       }
 
-   
-    
+       
         if(pedidoId){
-
-      
         
         return(
             <div className="container13" style={{ color:"black", backgroundColor:"white", marginLeft: 300, marginRight:300}} >
@@ -192,7 +186,7 @@ export const CheckOut =()=>{
           <div className="col-12">
             <div className="form-check">
               <input className="form-check-input" type="checkbox" id="gridCheck" />
-              <label className="form-check-label" for="gridCheck">
+              <label className="form-check-label" >
                 Check me out
               </label>
             </div>
