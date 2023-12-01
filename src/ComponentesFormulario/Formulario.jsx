@@ -48,7 +48,7 @@ const handleValores=(e)=>{
       <form className="row g-3 m-3 p-3" onSubmit={handSumit}>
         
         <div className="">
-            <label htmlFor="inputNombre" className="form-label">
+            <label className="form-label">
               Nombre
             </label>
             <input
@@ -64,7 +64,7 @@ const handleValores=(e)=>{
   
   
           <div className="col-md-6">
-            <label htmlFor="inputEmail4" className="form-label">
+            <label className="form-label">
               Email
             </label>
             <input 
@@ -79,7 +79,7 @@ const handleValores=(e)=>{
           </div>
   
           <div className="col-md-6">
-            <label htmlFor="inputPassword4" className="form-label">
+            <label  className="form-label">
               Password
             </label>
             <input type="password" className="form-control" id="inputPassword4"
@@ -90,7 +90,7 @@ const handleValores=(e)=>{
           </div>
   
           <div className="col-12">
-            <label htmlFor="inputAddress" className="form-label">
+            <label className="form-label">
               Address
             </label>
             <input
@@ -106,7 +106,7 @@ const handleValores=(e)=>{
   
   
           <div className="col-md-6">
-            <label htmlFor="inputCity" className="form-label">
+            <label  className="form-label">
               City
             </label>
             <input type="text" className="form-control" id="inputCity" 
@@ -117,7 +117,7 @@ const handleValores=(e)=>{
           </div>
   
           <div className="col-md-4">
-            <label htmlFor="inputState" className="form-label">
+            <label  className="form-label">
               State
             </label>
             <select id="inputState" className="form-select">
@@ -126,8 +126,8 @@ const handleValores=(e)=>{
             </select>
           </div>
   
-          <div class="col-md-2">
-            <label htmlFor="inputZip" className="form-label">
+          <div className="col-md-2">
+            <label  className="form-label">
               Zip
             </label>
             <input type="text" className="form-control" id="inputZip" />
@@ -136,7 +136,7 @@ const handleValores=(e)=>{
           <div className="col-12">
             <div className="form-check">
               <input className="form-check-input" type="checkbox" id="gridCheck" />
-              <label className="form-check-label" for="gridCheck">
+              <label className="form-check-label" >
                 Check me out
               </label>
             </div>
