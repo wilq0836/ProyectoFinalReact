@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { pedirCompra } from "./ConsultarCompra";
-import { ImprimirLista } from "./ImprimirLista";
-
 
 
  export const Pedidos = ()=>{
  
-
-
 
   const objeto = [ {
     nombre: "wilmar",
@@ -49,6 +45,7 @@ import { ImprimirLista } from "./ImprimirLista";
 }]
 
 const[item, setItem] = useState("");
+const[producto, setProducto] = useState([objeto]);
 
 
     const idCompra = useParams().id;
@@ -56,14 +53,14 @@ const[item, setItem] = useState("");
     useEffect(()=>{
       pedirCompra(idCompra)
       .then((res)=>{       
-       setItem(...res)
+       setItem(res)
+       setProducto(res.productos)
       })
     },[idCompra])
                         
-     //console.log(item)
-    const productoConsultado = [...item.productos];
-    console.log(productoConsultado)
-       
+    console.log(producto)
+    
+         
         
  
     return(
@@ -98,7 +95,7 @@ const[item, setItem] = useState("");
                 </thead>
 
                 <tbody>
-                { productoConsultado.map((e)=>
+                { producto.map((e)=>
                             <tr key={e.id}>
                               <th scope="row">{e.id}</th>
                               <td>{e.marca}</td>
@@ -109,7 +106,8 @@ const[item, setItem] = useState("");
                               <td> < img className="imagentab" src={e.foto} alt="" /></td>
                             </tr>
                             )
-                            }
+     }
+    
                
                 </tbody>
                 </table> 
